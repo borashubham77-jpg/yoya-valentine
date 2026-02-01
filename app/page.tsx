@@ -28,7 +28,7 @@ export default function ValentinePage() {
   }
 
   return (
-    <main className="min-h-screen min-h-dvh bg-gradient-to-b from-pink-100 via-rose-50 to-pink-100 flex items-center justify-center p-6 overflow-hidden relative">
+    <main className="fixed inset-0 bg-gradient-to-b from-pink-100 via-rose-50 to-pink-100 flex items-center justify-center p-6 overflow-hidden">
       {/* Floating hearts background */}
       <FloatingHearts />
 
@@ -39,7 +39,7 @@ export default function ValentinePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="flex flex-col items-center justify-center gap-8 z-10 w-full max-w-lg mx-auto"
+            className="flex flex-col items-center justify-center gap-6 z-10 text-center"
           >
             {/* Cute cat illustration */}
             <motion.div
@@ -59,7 +59,7 @@ export default function ValentinePage() {
             </motion.h1>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-8 w-full">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-4">
               <motion.button
                 onClick={handleYesClick}
                 animate={{ scale: yesSize }}
@@ -117,7 +117,7 @@ export default function ValentinePage() {
             key="celebration"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center gap-8 z-10 w-full max-w-lg mx-auto"
+            className="flex flex-col items-center justify-center gap-6 z-10 text-center"
           >
             {/* Celebration animation */}
             <Celebration />
