@@ -59,13 +59,13 @@ export default function ValentinePage() {
             </motion.h1>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row items-center gap-6 mt-6">
               <motion.button
                 onClick={handleYesClick}
                 animate={{ scale: yesSize }}
                 whileHover={{ scale: yesSize * 1.05 }}
                 whileTap={{ scale: yesSize * 0.95 }}
-                className="px-8 py-4 bg-rose-400 hover:bg-rose-500 text-white font-semibold rounded-full shadow-lg transition-colors text-lg"
+                className="px-12 py-5 bg-rose-400 hover:bg-rose-500 text-white font-bold rounded-full shadow-lg transition-colors text-xl md:text-2xl min-w-[160px]"
               >
                 Yes
               </motion.button>
@@ -80,7 +80,7 @@ export default function ValentinePage() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 whileHover={{ scale: 0.95 }}
                 whileTap={{ rotate: [0, -5, 5, -5, 0], transition: { duration: 0.4 } }}
-                className="px-8 py-4 bg-lavender-300 hover:bg-lavender-400 text-gray-600 font-semibold rounded-full shadow-lg transition-colors text-lg"
+                className="px-12 py-5 text-gray-600 font-bold rounded-full shadow-lg transition-colors text-xl md:text-2xl min-w-[160px]"
                 style={{ backgroundColor: "#E6E6FA" }}
               >
                 No
@@ -89,15 +89,26 @@ export default function ValentinePage() {
 
             {noClickCount > 0 && (
               <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-rose-400 text-sm mt-2"
+                key={noClickCount}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-rose-400 text-lg md:text-xl mt-4 font-medium text-center"
               >
                 {noClickCount === 1 && "Are you sure?"}
-                {noClickCount === 2 && "Really?"}
-                {noClickCount === 3 && "Think again..."}
-                {noClickCount === 4 && "Pretty please?"}
-                {noClickCount >= 5 && "Just click Yes already!"}
+                {noClickCount === 2 && "Really? Think again..."}
+                {noClickCount === 3 && "Pretty please?"}
+                {noClickCount === 4 && "Come on, don't be shy!"}
+                {noClickCount === 5 && "I promise it'll be fun!"}
+                {noClickCount === 6 && "You're breaking my heart..."}
+                {noClickCount === 7 && "Just one little yes?"}
+                {noClickCount === 8 && "I'll be the best valentine ever!"}
+                {noClickCount === 9 && "Please please please?"}
+                {noClickCount === 10 && "I won't give up on you!"}
+                {noClickCount === 11 && "The yes button is right there..."}
+                {noClickCount === 12 && "My heart can't take this!"}
+                {noClickCount === 13 && "You know you want to say yes!"}
+                {noClickCount === 14 && "I believe in us!"}
+                {noClickCount >= 15 && "Okay okay, just click Yes already!"}
               </motion.p>
             )}
           </motion.div>
