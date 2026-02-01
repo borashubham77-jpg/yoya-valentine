@@ -76,10 +76,10 @@ export default function ValentinePage() {
                 animate={{
                   x: noPosition.x,
                   y: noPosition.y,
-                  rotate: noClickCount > 0 ? [0, -5, 5, -5, 0] : 0,
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 whileHover={{ scale: 0.95 }}
+                whileTap={{ rotate: [0, -5, 5, -5, 0], transition: { duration: 0.4 } }}
                 className="px-8 py-4 bg-lavender-300 hover:bg-lavender-400 text-gray-600 font-semibold rounded-full shadow-lg transition-colors text-lg"
                 style={{ backgroundColor: "#E6E6FA" }}
               >
