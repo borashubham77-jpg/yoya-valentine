@@ -2,39 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 0 0% 100%;
-  --foreground: 340 20% 20%;
-  --primary: 340 82% 76%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 270 50% 90%;
-  --secondary-foreground: 270 30% 30%;
-  --muted: 340 30% 96%;
-  --muted-foreground: 340 20% 50%;
-  --accent: 340 100% 90%;
-  --accent-foreground: 340 60% 40%;
-  --radius: 1rem;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 340 20% 20%;
+    --primary: 340 82% 76%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 50% 90%;
+    --secondary-foreground: 270 30% 30%;
+    --muted: 340 30% 96%;
+    --muted-foreground: 340 20% 50%;
+    --accent: 340 100% 90%;
+    --accent-foreground: 340 60% 40%;
+    --radius: 1rem;
+  }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-body {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  background: linear-gradient(to bottom, #fce7f3, #fff1f2, #fce7f3);
-  min-height: 100vh;
-}
+  body {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    min-height: 100vh;
+  }
 
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
 
-button:focus-visible {
-  outline: 2px solid #f472b6;
-  outline-offset: 2px;
+  button:focus-visible {
+    outline: 2px solid #f472b6;
+    outline-offset: 2px;
+  }
 }
