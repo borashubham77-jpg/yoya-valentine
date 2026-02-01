@@ -249,13 +249,19 @@ function Celebration() {
 }
 
 function FloatingHearts() {
-  const hearts = [...Array(12)].map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    delay: Math.random() * 5,
-    duration: 5 + Math.random() * 5,
-    size: 12 + Math.random() * 16,
-  }))
+  const [hearts, setHearts] = useState<Array<{id: number; x: number; delay: number; duration: number; size: number}>>([])
+
+  useEffect(() => {
+    setHearts([...Array(12)].map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: 5 + Math.random() * 5,
+      size: 12 + Math.random() * 16,
+    })))
+  }, [])
+
+  if (hearts.length === 0) return null
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -287,14 +293,19 @@ function FloatingHearts() {
 }
 
 function Confetti() {
-  const confetti = [...Array(30)].map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    color: ["#FFB6C1", "#FF69B4", "#FFC0CB", "#E6E6FA", "#FFD700"][
-      Math.floor(Math.random() * 5)
-    ],
-    delay: Math.random() * 0.5,
-  }))
+  const [confetti, setConfetti] = useState<Array<{id: number; x: number; color: string; delay: number}>>([])
+
+  useEffect(() => {
+    const colors = ["#FFB6C1", "#FF69B4", "#FFC0CB", "#E6E6FA", "#FFD700"]
+    setConfetti([...Array(30)].map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      delay: Math.random() * 0.5,
+    })))
+  }, [])
+
+  if (confetti.length === 0) return null
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
