@@ -28,7 +28,7 @@ export default function ValentinePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-100 via-rose-50 to-pink-100 flex flex-col items-center justify-center p-4 overflow-hidden relative">
+    <main className="min-h-screen min-h-dvh bg-gradient-to-b from-pink-100 via-rose-50 to-pink-100 flex items-center justify-center p-6 overflow-hidden relative">
       {/* Floating hearts background */}
       <FloatingHearts />
 
@@ -39,7 +39,7 @@ export default function ValentinePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="flex flex-col items-center gap-8 z-10"
+            className="flex flex-col items-center justify-center gap-8 z-10 w-full max-w-lg mx-auto"
           >
             {/* Cute cat illustration */}
             <motion.div
@@ -59,13 +59,13 @@ export default function ValentinePage() {
             </motion.h1>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 mt-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-8 w-full">
               <motion.button
                 onClick={handleYesClick}
                 animate={{ scale: yesSize }}
                 whileHover={{ scale: yesSize * 1.05 }}
                 whileTap={{ scale: yesSize * 0.95 }}
-                className="px-12 py-5 bg-rose-400 hover:bg-rose-500 text-white font-bold rounded-full shadow-lg transition-colors text-xl md:text-2xl min-w-[160px]"
+                className="px-16 py-6 bg-rose-400 hover:bg-rose-500 text-white font-bold rounded-full shadow-xl transition-colors text-2xl md:text-3xl min-w-[200px] min-h-[70px]"
               >
                 Yes
               </motion.button>
@@ -80,7 +80,7 @@ export default function ValentinePage() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 whileHover={{ scale: 0.95 }}
                 whileTap={{ rotate: [0, -5, 5, -5, 0], transition: { duration: 0.4 } }}
-                className="px-12 py-5 text-gray-600 font-bold rounded-full shadow-lg transition-colors text-xl md:text-2xl min-w-[160px]"
+                className="px-16 py-6 text-gray-600 font-bold rounded-full shadow-xl transition-colors text-2xl md:text-3xl min-w-[200px] min-h-[70px]"
                 style={{ backgroundColor: "#E6E6FA" }}
               >
                 No
@@ -117,7 +117,7 @@ export default function ValentinePage() {
             key="celebration"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center gap-8 z-10"
+            className="flex flex-col items-center justify-center gap-8 z-10 w-full max-w-lg mx-auto"
           >
             {/* Celebration animation */}
             <Celebration />
